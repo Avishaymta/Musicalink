@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{
+            url_for('static', filename='css/register/style.css') 
+        }}">
+        <script src="{{
+            url_for('static', filename='js/register/script.js') 
+        }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <title>Musicalink - Sign up</title>
+    </head>
+</head>
+<body>
+    <h1>Musicalink.</h1>
+    <div class="register">
+        <div class="header">
+            <h2>Signing up</h2>
+        </div>
+        <div class="inputs">
+            <span>Username</span>
+            <input type="username">
+            <span>Email</span>
+            <input type="email">
+            <span>Password</span>
+            <input type="password">
+            <span>Verify password</span>
+            <input type="password">
+        </div>
+        <button>Sign up</button>
+        <div class="footer">
+            <span>Already have a user? Click <a href="/">here.</a> </span>
+        </div>
+    </div>
+</body>
+</html>

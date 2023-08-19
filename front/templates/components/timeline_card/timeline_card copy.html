@@ -1,0 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link rel="stylesheet" href="{{
+    url_for('static', filename='timeline_card/style/style.css') 
+    }}">
+<script src="{{
+    url_for('static', filename='timeline_card/script/script.js') 
+    }}"></script>
+<div class="timeline-content-card {{ cardnum }}">
+    <div class="header">
+        <img src="{{
+                url_for('static', filename='timeline_card/img/images.jpeg')
+            }}" title="{{ user }}'s profile picture">
+        <div class="name">
+            <h3 id="displayname">{{ timeline_user }}</h3>
+            <span id="handle">@{{ timeline_user_handle }}</span>
+        </div>
+    </div>
+    <div class="post-content">
+        <div id="actual">
+            <div class="post-type">
+                {{ post_type }}
+            </div>
+            <hr style="width: 100%; margin: 0; padding: 0; opacity: 0.6;">
+            <div class="attached-text">
+                <span>{{ attached_text }}
+                </span>
+            </div>
+            <span class="attached-media">
+            </span>
+        </div>
+        <div class="post-details">
+            <span class="post-details" id="timestamp">20:34 EST, Tuesday</span>
+            <span class="post-details" id="location">Greater Beijing Area, China</span>
+        </div>
+    </div>
+</div>
+</div>

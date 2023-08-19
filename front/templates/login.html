@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{
+        url_for('static', filename='css/login/style.css') 
+    }}">
+    <script src="{{
+        url_for('static', filename='js/login/script.js') 
+    }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Musicalink - Sign in</title>
+</head>
+<body>
+    <h1>Musicalink.</h1>
+    <div class="login">
+        <div class="header">
+            <h2>Sign in</h2>
+        </div>
+        <div class="flavor">
+            <span>Musicalink is home to thousands of musicians.</span>
+            <span>Not registered? Sign up <a href="/register">here.</a></span>
+            <span>You can also learn more about us <a href="/about">here.</a></span>
+        </div>
+        <hr>
+        <div class="inputs">
+            <span>Existing user? Sign in below:</span>
+            <div class="inputs-actual"></div>
+            <span>Username</span>
+            <input type="username">
+            <span>Password</span>
+            <input type="password">
+        </div>
+        <button>Sign in</button>
+        <div class="footer">
+            <span>Issues with signing in?</span>
+            <span><a href="/forgot_username">I've forgotten my username.</a></span>
+            <span><a href="/forgot_password">I don't remember my password.</a></span>
+        </div>
+    </div>
+    <div class="notification">notification</div>
+</body>
+</html>

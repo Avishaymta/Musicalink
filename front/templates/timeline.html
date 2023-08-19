@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block main %}
+
+<body>
+    <div class="important-notice" style="color: red;">
+        <h1>!! - Component Presentation -!!</h1>
+        <h3>DEMO OF COMPONENT</h3>
+        <p>Functions:</p>
+        <p>Displays username & handle</p>
+        <p>Allows post-types</p>
+        <p>Post types: </p>
+        <p>Sharing Thoughts, Anouncements, WANTED, Sales and Purchases (Marketplace)</p>
+        <p>Design not final</p>
+        <hr style="width: 3000px; height: 1px; margin-left: auto; margin-bottom: 40px;">
+    </div>
+    {% for cardnum in tlc_payload %}
+        {% with indexer=cardnum %}
+            {% include 'components/timeline_card/timeline_card.html' %}
+        {% endwith %}
+    {% endfor %}
+    <script>
+        // Temporary use for proof of concept - change to Jinja later
+        // Loads payload per user
+
+        tlc_payload = {{ tlc_payload | tojson | safe }}
+        for (let card_data in tlc_payload) {
+            console.log(tlc_payload[card_data])
+            // Select Element shorthands
+            console.log(card_data)
+            let tlc_element = `.timeline-content-card.${card_data}`
+            let displayname = `${tlc_element} > .header > .name > .displayname`
+            let handle = `${tlc_element} > .header > .name > .handle`
+            let post_type = `${tlc_element} > .post-content > #actual > .post-type`
+            let attached_text = `${tlc_element} > .post-content > #actual > .attached-text`
+            let attached_media = `${tlc_element} > .post-content > #actual > .attached-media`
+
+            // Loads profile pictures
+            $(`${tlc_element} > .header > img`).attr('src', `/get-img?pfp${tlc_payload[card_data]['be_data']['user_id']}.jpg`)
+
+            // Load names
+            $(`${displayname}`).text(tlc_payload[card_data]['timeline_user']['name'])
+            $(`${handle}`).text(`@${tlc_payload[card_data]['timeline_user']['timeline_user_handle']}`)
+
+            // Load post info
+            $(`${post_type}`).text(tlc_payload[card_data]['post_type']['prop_actual'])
+            console.log()
+            // Load attachements
+            payload = {
+                "text" : tlc_payload[card_data]['attached_text']['payload'],
+                "media" : tlc_payload[card_data]['attached_media']['media']
+            }
+
+            if(payload["text"] != null){
+                for(let text in tlc_payload[card_data]['attached_text']['payload'])
+                    $(`${attached_text}`).text(tlc_payload[card_data]['attached_text']['payload'][text])
+            }
+            for(let media in tlc_payload[card_data]['attached_media']['payload']){
+                $(`${attached_media}`).append(
+                    `<img src=/get-img?${tlc_payload[card_data]['attached_media']['payload'][media]}>`)
+            }
+        }
+    </script>
+</body>
+
+{% endblock %}

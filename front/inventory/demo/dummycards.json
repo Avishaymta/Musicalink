@@ -1,0 +1,55 @@
+{
+    "0": {
+        "timeline_user": {
+            "name": "Omer",
+            "timeline_user_handle": "IavgJOE"
+        },
+        "be_data": {
+            "user_id": "0000000000000001",
+            "aggregation": {
+                "relation": "friendpost",
+                "source": "user_personal"
+            }
+        },
+        "post_type": {
+            "prop_type": "sharing_thought",
+            "prop_actual": "Sharing their thoughts..."
+        },
+        "attached_text": {
+            "payload": {
+                "1": "Ate a really tasty burger.\n Mr. Burger said not to worry about the taste.\n Stomach stills hurts though.\n"
+            }
+        },
+        "attached_media": {
+            "payload": null
+        }
+    },
+    "1": {
+        "timeline_user": {
+            "name": "Avishay Asido",
+            "timeline_user_handle": "Me_Enjoy_Pancakes_1993"
+        },
+        "be_data": {
+            "user_id": "0000000000000002",
+            "aggregation": {
+                "relation": "friendpost",
+                "source": "user_personal"
+            }
+        },
+        "post_type": {
+            "prop_type": "anouncement",
+            "prop_actual": "Announcing some new things!"
+        },
+        "attached_text": {
+            "payload": {
+                "0": "I'm proud to announce that I've joined @SklepBand as the lead xylophone player!\n Hope to see you all in Eshkol Park on the 24th!\n"
+            }
+        },
+        "attached_media": {
+            "payload": {
+                "0": "xylophone.jpg",
+                "1": "download.jpg"
+            }
+        }
+    }
+}
